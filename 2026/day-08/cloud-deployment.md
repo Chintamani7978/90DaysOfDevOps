@@ -17,24 +17,23 @@ This task focuses on cloud provisioning, secure remote access, service deploymen
 
 ---
 
-## Part 1: Launch Cloud Instance and SSH Access
+ 
 
-### Step 1: Cloud Instance Creation
+# Step 1: Cloud Instance Creation
 - Created an EC2 instance using Ubuntu AMI
 - Selected instance type: t2.micro
 - Generated and downloaded PEM key pair
 - Configured security group:
   - SSH (22): Allowed from my IP
-  - HTTP (80): Allowed from anywhere (0.0.0.0/0)
-![alt text](image-4.png)
+  - HTTP (80): Allowed from anywhere (0.0.0.0/ Step 2: SSH Connection
 
-### Step 2: SSH Connection
+
 ```bash
 chmod 400 your-key.pem
 ssh -i your-key.pem ubuntu@<public-ip>
-![alt text](image-5.png)
-Part 2: Install Docker and Nginx
 
+```
+# Part 2: Install Docker and Nginx
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install nginx -y
@@ -48,29 +47,25 @@ sudo systemctl enable nginx
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
+![alt text](image-3.png)
 
-![alt text](image-1.png)
-
-Part 3: Security Group Configuration 
+# Part 3: Security Group Configuration 
 ![alt text](image-2.png)
 
-Part 4: Extract Nginx Logs
+## Part 4: Extract Nginx Logs
 
-Step 1: View Logs
+# Step 1: View Logs
 sudo cat /var/log/nginx/access.log
 sudo cat /var/log/nginx/error.log
 
-Step 2: Save Logs to File
+# Step 2: Save Logs to File
 sudo cat /var/log/nginx/access.log > nginx-logs.txt
-![alt text](image-3.png)
-Step 3: Download Logs to Local Machine
-scp -i your-key.pem ubuntu@<public-ip>:~/nginx-logs.txt .
+
+# Step 3: Download Logs to Local Machine
+ scp -i your-key.pem ubuntu@<public-ip>:~/nginx-logs.txt .
 
 
-
-
-
-Commands Used
+# Commands Used
 
 ssh
 apt update
@@ -83,12 +78,12 @@ systemctl status
 cat
 chmod
 
-Challenges Faced
+# challenges Faced
 Initial web access failure due to missing HTTP rule in the security group.
 Resolved by allowing inbound traffic on port 80.
 Faced permission issues while copying logs, resolved by storing logs in the home directory.
 
-What I Learned
+# What I Learned
 
 Cloud VM provisioning and secure SSH access
 Installing and managing services on Linux servers
@@ -96,7 +91,7 @@ Configuring security groups for public access
 Extracting and transferring server logs
 
 
-Why This Matters for DevOps
+# Why This Matters for DevOps
 
 This exercise demonstrates real DevOps responsibilities:
 Cloud infrastructure provisioning
