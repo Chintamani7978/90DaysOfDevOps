@@ -90,7 +90,7 @@ Access test:
 
 sudo -u nairobi touch /opt/team-workspace/nairobi.txt
 ```
-## Here all the screenshots for varification 
+## Here all the screenshots for verification 
 ![alt text](image.png)
 
 
