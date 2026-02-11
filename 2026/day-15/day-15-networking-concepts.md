@@ -1,4 +1,4 @@
-📄 day-15-networking-concepts.md
+
 # Day 15 – Networking Concepts: DNS, IP, Subnets & Ports
 
 ## Objective
@@ -162,14 +162,14 @@ LISTEN 0 128 0.0.0.0:22
 This confirms SSH is listening on port 22.
 
 5. Applied Scenario Analysis
- I ran curl http://myapp.com:8080 — what networking concepts were involved?
+# You run curl http://myapp.com:8080 — what networking concepts are involved?
 
-When I ran this command, the system first resolved myapp.com to its IP address using DNS.
-Then a TCP connection was attempted on port 8080, and an HTTP request was sent to the application.
-This involved DNS resolution, IP routing, TCP communication, and port-based service access.
+When running this command, DNS first resolves myapp.com to an IP address.
+A TCP connection is then established to port 8080, and an HTTP request is sent.
+This involves DNS resolution, IP routing, TCP communication, and port-based service access at the application layer.
 
-2️⃣ My app couldn't reach a database at 10.0.1.50:3306 — what did I check first?
+# Your app can't reach a database at 10.0.1.50:3306 — what would you check first?
 
-Since 10.0.1.50 is a private IP, I first checked whether the MySQL service was running and listening on port 3306.
-Then I verified network reachability and firewall/security group rules to ensure the port was not blocked.
-If needed, I would test connectivity using nc -zv 10.0.1.50 3306 or similar tools.
+First, I would verify whether the database service is running and listening on port 3306.
+Then I would check network reachability, firewall/security group rules, and ensure both systems are in the correct subnet or allowed route.
+If needed, I would validate connectivity using tools like ping, nc, or telnet.
