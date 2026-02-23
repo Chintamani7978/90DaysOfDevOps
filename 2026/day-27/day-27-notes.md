@@ -1,11 +1,12 @@
-Day 27 – GitHub Profile Makeover: Building My Developer Identity
+## Day 27 – GitHub Profile Makeover: Building My Developer Identity
+
 Overview
 
 Today was focused on improving my GitHub profile as a professional developer portfolio.
 
 This was not a coding day — it was about branding, positioning, and presenting my work clearly for recruiters and collaborators.
 
-Task 1 – Profile Audit (Before Changes)
+# Task 1 – Profile Audit (Before Changes)
 
 When I reviewed my GitHub profile as a stranger, I observed:
 
@@ -22,7 +23,7 @@ Pinned repositories did not fully represent my strongest work.
 From a recruiter’s perspective, it lacked clear positioning.
 
 
-Task 2 – Created a Professional Profile README
+# Task 2 – Created a Professional Profile README
 
 
 I created a special repository:
@@ -47,7 +48,7 @@ Kept it clean and readable (no overload)
 
 Goal: Make the profile readable within 10–15 seconds.
 
-Task 3 – Organized Repositories
+# Task 3 – Organized Repositories
 
 I structured my repositories into focused categories:
 
@@ -97,7 +98,7 @@ Description
 
 .gitignore
 
-Task 4 – Pinned Repositories
+# Task 4 – Pinned Repositories
 
 I pinned 6 repositories that best represent my work:
 
@@ -115,7 +116,7 @@ A cloud/automation project
 
 This ensures recruiters immediately see my best work.
 
-Task 5 – Clean Up
+# Task 5 – Clean Up
 
 Removed or archived unused repositories
 
