@@ -1,0 +1,62 @@
+# Custom Helm Values Configuration
+# This file demonstrates how to override default Bitnami/nginx values
+
+# Number of replica pods to run for load balancing
+replicaCount: 3
+
+# Image configuration - specify which container image and tag to use
+image:
+  repository: bitnami/nginx
+  tag: "1.25"
+  pullPolicy: IfNotPresent
+
+# Service configuration - how the app is exposed
+service:
+  type: LoadBalancer  # ClusterIP (internal), NodePort (external), or LoadBalancer (cloud)
+  port: 80            # External port
+  targetPort: 8080    # Internal container port
+
+# Resource requests and limits to ensure fair cluster usage
+resources:
+  requests:
+    # Minimum resources the scheduler must allocate
+    memory: "64Mi"
+    cpu: "100m"
+  limits:
+    # Maximum resources the container can use
+    memory: "256Mi"
+    cpu: "500m"
+
+# Autoscaling configuration (if using HPA)
+autoscaling:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+# Liveness and readiness probes for self-healing
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 10
+
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 5
+  periodSeconds: 5
+
+# NodeSelector to deploy on specific nodes (optional)
+nodeSelector: {}
+
+# Pod affinity and anti-affinity rules (optional)
+affinity: {}
+
+# Node tolerations for special node pools (optional)
+tolerations: []
+
+# Storage if needed (optional)
+persistence:
+  enabled: false
+  storageClass: "standard"
+  size: "10Gi"
