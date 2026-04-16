@@ -184,7 +184,6 @@ spec:
         port: 80
       periodSeconds: 5
 ```
-```
 
 ### Commands
 ```bash
